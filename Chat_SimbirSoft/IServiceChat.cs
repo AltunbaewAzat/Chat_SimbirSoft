@@ -12,6 +12,12 @@ namespace Chat_SimbirSoft
     public interface IServiceChat
     {
         [OperationContract]
-        void DoWork();
+        int  Connect();
+
+        [OperationContract]
+        void Disconnect(int id);
+
+        [OperationContract]
+        void Message(string message);
     }
 }
