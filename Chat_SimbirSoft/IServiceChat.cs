@@ -6,18 +6,17 @@ using System.ServiceModel;
 using System.Text;
 
 namespace Chat_SimbirSoft
-{
-    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени интерфейса "IServiceChat" в коде и файле конфигурации.
+{   
     [ServiceContract]
     public interface IServiceChat
     {
         [OperationContract]
-        int  Connect();
+        int  ConnectServer();
 
         [OperationContract]
-        void Disconnect(int id);
+        void DisconnectServer(int id);
 
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void Message(string message);
     }
 }
