@@ -28,6 +28,7 @@ namespace ClientWPF
         public void Connected()
         {
             tbUserName.IsEnabled = false;
+            btnConnect.Content = "Disconnect";
             if (!isConnected)
             {
                 isConnected = true;
@@ -35,6 +36,7 @@ namespace ClientWPF
         }
         public void Disconnected()
         {
+            btnConnect.Content = "Connect";
             tbUserName.IsEnabled = true;
             if (isConnected)
             {
