@@ -7,11 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="700">
     <Grid>
-        <Button x:Name="btnConnect" Content="Connect" HorizontalAlignment="Left" Margin="47,26,0,0" VerticalAlignment="Top" Width="113" RenderTransformOrigin="-0.833,-0.761" Height="38"/>
-        <TextBox x:Name="tbUserName" HorizontalAlignment="Left" Height="23" Margin="288,35,0,0" TextWrapping="Wrap" Text="UserName" VerticalAlignment="Top" Width="206" RenderTransformOrigin="0.954,2.848"/>
-        <Label x:Name="lblUserName" Content="UserName:" HorizontalAlignment="Left" Margin="209,32,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbChat" HorizontalAlignment="Left" Height="223" Margin="31,92,0,0" VerticalAlignment="Top" Width="499"/>
-        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Height="75" Margin="31,329,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="499"/>
+        <Button x:Name="btnConnect" Click="btnConnect_Click" Content="Connect" HorizontalAlignment="Left" Margin="336,26,0,0" VerticalAlignment="Top" Width="113" RenderTransformOrigin="-0.833,-0.761" Height="38"/>
+        <TextBox x:Name="tbUserName" HorizontalAlignment="Left" Height="23" Margin="110,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="206" RenderTransformOrigin="0.954,2.848"/>
+        <Label x:Name="lblUserName" Content="UserName:" HorizontalAlignment="Left" Margin="31,32,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbChat" HorizontalAlignment="Left" Height="223" Margin="31,92,0,0" VerticalAlignment="Top" Width="463"/>
+        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Height="75" Margin="31,329,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="463"/>
+        <ListBox x:Name="lbUsers" HorizontalAlignment="Left" Height="306" Margin="532,92,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="lblUsers" Content="Users:" HorizontalAlignment="Left" Margin="532,58,0,0" VerticalAlignment="Top" Width="125"/>
 
     </Grid>
 </Window>
