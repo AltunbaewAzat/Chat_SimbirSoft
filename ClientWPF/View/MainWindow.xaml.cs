@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using ClientWPF.Models;
+using System.Windows;
 
 
 namespace ClientWPF
@@ -27,6 +28,9 @@ namespace ClientWPF
         }
         public void Connected()
         {
+            UserInfo user = new UserInfo{
+                UserName = tbUserName.Text
+            };
             tbUserName.IsEnabled = false;
             btnConnect.Content = "Disconnect";
             if (!isConnected)

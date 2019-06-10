@@ -3,14 +3,16 @@ using System.Web.Http;
 using WebApi.Models;
 
 namespace WebApi.Controllers
-{
-    [Authorize]
+{    
     public class ValuesController : ApiController
     {
-        List<User> user = new List<User>();
-        int Id = 1;
+        //List<User> user = new List<User>();
+        //int Id = 1;
         
+        //public string Get()
+        //{
 
+        //}
         // GET api/values
         public IEnumerable<string> Get()
         {
