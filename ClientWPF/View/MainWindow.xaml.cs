@@ -3,10 +3,7 @@ using System.Windows;
 
 
 namespace ClientWPF
-{
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
+{  
     public partial class MainWindow : Window
     {
         bool isConnected = false;
