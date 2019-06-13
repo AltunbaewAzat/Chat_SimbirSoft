@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using WpfClientApp.Managers;
+
 namespace WpfClientApp
 {  
     public partial class MainWindow : Window
@@ -27,6 +29,7 @@ namespace WpfClientApp
             {
                 UserName = tbUserName.Text
             };
+            ApiManagers api = new ApiManagers();
             tbUserName.IsEnabled = false;
             btnConnect.Content = "Disconnect";
             if (!isConnected)
