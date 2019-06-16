@@ -10,6 +10,6 @@
         <ListBox x:Name="lbChat" HorizontalAlignment="Left" Height="223" Margin="17,92,0,0" VerticalAlignment="Top" Width="442"/>
         <TextBox x:Name="tbInput" HorizontalAlignment="Left" Height="75" Margin="17,329,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="442"/>
         <ListBox x:Name="lbUsers" HorizontalAlignment="Left" Height="312" Margin="476,92,0,0" VerticalAlignment="Top" Width="101"/>
-        <Label x:Name="lblUsers" Content="Users:" HorizontalAlignment="Left" Margin="476,61,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.573,-0.868"/>
+        <Label Content="Users:" HorizontalAlignment="Left" Margin="476,61,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.573,-0.868"/>
     </Grid>
 </Window>

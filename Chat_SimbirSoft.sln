@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfClientApp", "WpfClientApp\WpfClientApp.csproj", "{259AFB70-D122-4370-B959-0AAE61FA17B2}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApi", "WebApi\WebApi.xproj", "{EC44E9E2-3AC4-4BC0-A691-C81E2E95873B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{259AFB70-D122-4370-B959-0AAE61FA17B2} = {259AFB70-D122-4370-B959-0AAE61FA17B2}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

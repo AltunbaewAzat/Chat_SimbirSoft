@@ -14,7 +14,7 @@ namespace WpfClientApp.Managers
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            string str = await client.GetStringAsync("api/values?userName=" + userName);         
+            string str = await client.GetStringAsync("api/values?userName=" + userName);
 
         }
     }

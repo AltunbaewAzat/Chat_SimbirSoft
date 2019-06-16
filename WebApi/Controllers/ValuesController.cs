@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Model;
 using System.Linq;
 
 namespace WebApi.Controllers
@@ -8,30 +7,30 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        public List<User> user = new List<User>();
-        public ValuesController()
-        {
-            user.Add(new User { UserId = 1, UserName = "Azat", Password = "qwerty" });
-            user.Add(new User { UserId = 2, UserName = "Masha", Password = "qwerty1234" });
-            user.Add(new User { UserId = 3, UserName = "Tom", Password = "1234" });
-        }           
+        public List<UserInfo> user = new List<UserInfo>();
+        //public ValuesController()
+        //{
+        //    user.Add(new UserInfo { Id = 1, UserName = "Azat", Password = "qwerty" });
+        //    user.Add(new UserInfo { Id = 2, UserName = "Masha", Password = "qwerty1234" });
+        //    user.Add(new UserInfo { Id = 3, UserName = "Tom", Password = "1234" });
+        //}
         // GET api/values
         [HttpGet]
-        public List<User> Get()
+        public List<UserInfo> Get()
         {
             return user;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public User Get(int id)
+        public UserInfo Get(int id)
         {
-            return user.Where(x => x.UserId == id).FirstOrDefault();
+            return user.Where(x => x.Id == id).FirstOrDefault();
         }
 
         // POST api/values
         [HttpPost]
-        public void Post(User value)
+        public void Post(UserInfo value)
         {
             user.Add(value);
         }
