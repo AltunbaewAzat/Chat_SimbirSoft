@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>c6b1d708-e108-42e1-82bb-d5a0e2d70547</ProjectGuid>
-    <RootNamespace>WebApiChat</RootNamespace>
+    <ProjectGuid>ec44e9e2-3ac4-4bc0-a691-c81e2e95873b</ProjectGuid>
+    <RootNamespace>WebApi</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

@@ -24,12 +24,7 @@ namespace WpfClientApp
             }
         }
         public void Connected()
-        {
-            UserInfo user = new UserInfo()
-            {
-                UserName = tbUserName.Text
-            };
-            ApiManagers api = new ApiManagers();
+        {                   
             tbUserName.IsEnabled = false;
             btnConnect.Content = "Disconnect";
             if (!isConnected)
@@ -47,10 +42,16 @@ namespace WpfClientApp
             }
         }
         private void Button_ClickConnect(object sender, RoutedEventArgs e)
-        {
+        {            
             ChatWindow chatWindow = new ChatWindow();
             chatWindow.Show();
             this.Close();
+
+            UserInfo user = new UserInfo
+            {
+                UserName = tbUserName.Text,
+                Password = tbPassword.Text
+            };           
         }
     }
 }

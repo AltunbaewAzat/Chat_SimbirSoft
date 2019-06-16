@@ -8,7 +8,7 @@
         Title="Chat" Height="300" Width="380">
     <Grid>
         <Button x:Name ="btnConnect" Click="Button_ClickConnect" Width="120" Height="40" Content="Connect" Margin="0 150 0 0" />
-        <Label x:Name="lblUsername" Content="Username:" HorizontalAlignment="Left" Margin="22 62 0 0" VerticalAlignment="Top"/>
+        <Label x:Name="lblUsername" Content="Name:" HorizontalAlignment="Left" Margin="22 62 0 0" VerticalAlignment="Top"/>
         <Label x:Name="lblPassword" Content="Password:" HorizontalAlignment="Left" Margin="22,106,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbUserName" HorizontalAlignment="Left" Height="24" Margin="110,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="24" Margin="110,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182"/>
