@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System;
+using Newtonsoft.Json;
 
 namespace WebApi.Controllers
 {
@@ -8,18 +10,26 @@ namespace WebApi.Controllers
     public class ValuesController : Controller
     {
         public List<UserInfo> user = new List<UserInfo>();
-        //public ValuesController()
-        //{
-        //    user.Add(new UserInfo { Id = 1, UserName = "Azat", Password = "qwerty" });
-        //    user.Add(new UserInfo { Id = 2, UserName = "Masha", Password = "qwerty1234" });
-        //    user.Add(new UserInfo { Id = 3, UserName = "Tom", Password = "1234" });
-        //}
-        // GET api/values
-        [HttpGet]
-        public List<UserInfo> Get()
+        public ValuesController()
         {
-            return user;
+            user.Add(new UserInfo { Id = 1, UserName = "Azat", Password = "qwerty" });
+            user.Add(new UserInfo { Id = 2, UserName = "Masha", Password = "qwerty1234" });
+            user.Add(new UserInfo { Id = 3, UserName = "Tom", Password = "1234" });
+
         }
+
+        [HttpGet]
+        public string Get([FromQuery]string userName, [FromQuery]string password)
+        {
+            return JsonConvert.SerializeObject(user.Where(x => String.Equals(x.UserName, userName) && String.Equals(x.Password, password)).FirstOrDefault());
+        }
+
+        // GET api/values
+        //[HttpGet]
+        //public List<UserInfo> Get()
+        //{
+        //    return user;
+        //}
 
         // GET api/values/5
         [HttpGet("{id}")]

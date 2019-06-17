@@ -1,10 +1,12 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using WpfClientApp.Managers;
 
 namespace WpfClientApp
-{  
+{
     public partial class MainWindow : Window
     {
+        ApiManagers api = new ApiManagers();
         public MainWindow()
         {
             InitializeComponent();
@@ -42,16 +44,26 @@ namespace WpfClientApp
             }
         }
         private void Button_ClickConnect(object sender, RoutedEventArgs e)
-        {
+        {           
+
             UserInfo user = new UserInfo()
             {
                 UserName = tbUserName.Text,
                 Password = tbPassword.Text
             };
 
-            ChatWindow chatWindow = new ChatWindow();
-            chatWindow.Show();
-            this.Close();                     
+            bool registration = (api.GetValue(user.UserName, user.Password));
+            
+            if(registration)
+            {
+                ChatWindow chatWindow = new ChatWindow();
+                chatWindow.Show();
+                this.Close();
+            }                   
+            else
+            {
+                MessageBox.Show("што то пошло не так");
+            }             
         }
     }
 }
