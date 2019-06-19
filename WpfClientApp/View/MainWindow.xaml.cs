@@ -44,12 +44,12 @@ namespace WpfClientApp
             }
         }
         private void Button_ClickConnect(object sender, RoutedEventArgs e)
-        {           
+        {
 
             UserInfo user = new UserInfo()
             {
                 UserName = tbUserName.Text,
-                Password = tbPassword.Text
+                Password = pbPassword.Password.ToString()
             };
 
             bool registration = (api.GetValue(user.UserName, user.Password));
@@ -64,6 +64,11 @@ namespace WpfClientApp
             {
                 MessageBox.Show("што то пошло не так");
             }             
+        }
+
+        private void Button_ClickRegistration(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
