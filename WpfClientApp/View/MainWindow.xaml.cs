@@ -7,63 +7,72 @@ namespace WpfClientApp
     public partial class MainWindow : Window
     {
         ApiManagers api = new ApiManagers();
+        UserInfo user = new UserInfo();
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        bool isConnected = false;
-
+        //bool isConnected = false;        
+        //bool registration = false;
         private void btnConnect_Click(object sender, RoutedEventArgs e)
         {
-            if (isConnected)
-            {
-                Disconnected();
-            }
-            else
-            {
-                Connected();
-            }
+            //if (isConnected)
+            //{
+            //    Disconnected();
+            //}
+            //else
+            //{
+            //    Connected();
+            //}
         }
         public void Connected()
         {                   
-            tbUserName.IsEnabled = false;
-            btnConnect.Content = "Disconnect";
-            if (!isConnected)
-            {
-                isConnected = true;
-            }
+            //tbUserName.IsEnabled = false;
+            //btnConnect.Content = "Disconnect";
+            //if (!isConnected)
+            //{
+            //    isConnected = true;
+            //}
         }
         public void Disconnected()
         {
-            btnConnect.Content = "Connect";
-            tbUserName.IsEnabled = true;
-            if (isConnected)
-            {
-                isConnected = false;
-            }
+            //btnConnect.Content = "Connect";
+            //tbUserName.IsEnabled = true;
+            //if (isConnected)
+            //{
+            //    isConnected = false;
+            //}
         }
         private void Button_ClickConnect(object sender, RoutedEventArgs e)
-        {
-
-            UserInfo user = new UserInfo()
+        {           
+            if(tbUserName.Text != "")
             {
-                UserName = tbUserName.Text,
-                Password = pbPassword.Password.ToString()
-            };
-
-            bool registration = (api.GetValue(user.UserName, user.Password));
-            
-            if(registration)
-            {
-                ChatWindow chatWindow = new ChatWindow();
-                chatWindow.Show();
-                this.Close();
-            }                   
+                user.UserName = tbUserName.Text;
+                if(pbPassword.Password.ToString() != "")
+                {
+                    user.Password = pbPassword.Password.ToString();
+                    bool registration = (api.GetValue(user.UserName, user.Password));
+                    if (registration)
+                    {
+                        ChatWindow chatWindow = new ChatWindow();
+                        chatWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Што то пошло не так");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Введите пароль.");
+                }
+            }
             else
             {
-                MessageBox.Show("што то пошло не так");
-            }             
+                MessageBox.Show("Введите имя пользователя.");
+            }           
         }
 
         private void Button_ClickRegistration(object sender, RoutedEventArgs e)

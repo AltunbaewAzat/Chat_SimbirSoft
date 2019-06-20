@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfClientApp"
         mc:Ignorable="d"
         Title="Chat" Height="300" Width="380">
-    <Grid  Height="399" VerticalAlignment="Top" Margin="0,0,-37,-129">
+    <Grid  Height="408" VerticalAlignment="Top" Margin="0,0,-47,-138">
         <Button x:Name ="btnConnect" Click="Button_ClickConnect" Width="120" Height="40" Content="Connect" Margin="62,159,216,178" />
         <Label x:Name="lblUsername" Content="Name:" HorizontalAlignment="Left" Margin="22 62 0 0" VerticalAlignment="Top"/>
         <Label x:Name="lblPassword" Content="Password:" HorizontalAlignment="Left" Margin="22,106,0,0" VerticalAlignment="Top"/>
