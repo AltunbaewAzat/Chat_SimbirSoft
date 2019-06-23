@@ -60,7 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Managers\ApiManagers.cs" />
-    <Compile Include="Model\UserInfo.cs" />
+    <Compile Include="Model\UserWpf.cs" />
     <Page Include="View\ChatWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

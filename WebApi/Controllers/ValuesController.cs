@@ -15,7 +15,6 @@ namespace WebApi.Controllers
             user.Add(new UserInfo { Id = 1, UserName = "Azat", Password = "qwerty" });
             user.Add(new UserInfo { Id = 2, UserName = "Masha", Password = "qwerty1234" });
             user.Add(new UserInfo { Id = 3, UserName = "Tom", Password = "1234" });
-
         }
 
         [HttpGet]

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using WpfClientApp.Managers;
 
 namespace WpfClientApp
@@ -7,12 +6,11 @@ namespace WpfClientApp
     public partial class MainWindow : Window
     {
         ApiManagers api = new ApiManagers();
-        UserInfo user = new UserInfo();
+        UserWpf user = new UserWpf();
         public MainWindow()
         {
             InitializeComponent();
         }
-
         //bool isConnected = false;        
         //bool registration = false;
         private void btnConnect_Click(object sender, RoutedEventArgs e)
@@ -46,10 +44,10 @@ namespace WpfClientApp
         }
         private void Button_ClickConnect(object sender, RoutedEventArgs e)
         {           
-            if(tbUserName.Text != "")
+            if(!string.IsNullOrEmpty(tbUserName.Text))
             {
                 user.UserName = tbUserName.Text;
-                if(pbPassword.Password.ToString() != "")
+                if(!string.IsNullOrEmpty(pbPassword.Password.ToString()))
                 {
                     user.Password = pbPassword.Password.ToString();
                     bool registration = (api.GetValue(user.UserName, user.Password));
