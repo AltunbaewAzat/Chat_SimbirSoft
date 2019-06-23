@@ -2,13 +2,14 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace WpfClientApp.Managers
 {
     public class ApiManagers
     {
         HttpClient client = new HttpClient();
-        HttpResponseMessage response = new HttpResponseMessage();
+        //HttpResponseMessage response = new HttpResponseMessage();
         public bool GetValue(string userName, string password)
         {
             client.BaseAddress = new Uri("http://localhost:30766");
@@ -27,15 +28,22 @@ namespace WpfClientApp.Managers
                 return false;
             }
         }
-
-        //public bool PostValue(string userName, string password)
+        //public bool PostValue(UserWpf userValue)
         //{
         //    client.BaseAddress = new Uri("http://localhost:30766");
         //    client.MaxResponseContentBufferSize = 256000;
         //    client.DefaultRequestHeaders.Accept.Clear();
         //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-        //    response = client.PostAsync("api/values", userName, password);
+        //    HttpResponseMessage response = client.PostAsync("api/values/", userValue).Result;
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
         //}
     }
 }

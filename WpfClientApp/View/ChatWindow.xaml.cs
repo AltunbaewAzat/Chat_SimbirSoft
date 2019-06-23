@@ -4,8 +4,8 @@ namespace WpfClientApp
     public partial class ChatWindow : Window
     {
         public ChatWindow()
-        {
-            InitializeComponent();
-        }        
+        {           
+            InitializeComponent();           
+        }               
     }
 }

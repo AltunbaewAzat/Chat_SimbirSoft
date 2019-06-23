@@ -18,11 +18,15 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public string Get([FromQuery]string userName, [FromQuery]string password)
+        public string GetUser(string userName, string password)
         {
             return JsonConvert.SerializeObject(user.Where(x => String.Equals(x.UserName, userName) && String.Equals(x.Password, password)).FirstOrDefault());
         }
-
+        [HttpPost]
+        public void PostUser(UserInfo value)
+        {
+            user.Add(value);
+        }
         // GET api/values
         //[HttpGet]
         //public List<UserInfo> Get()
@@ -38,11 +42,11 @@ namespace WebApi.Controllers
         }
 
         // POST api/values
-        [HttpPost]
-        public void Post(UserInfo value)
-        {
-            user.Add(value);
-        }
+        //[HttpPost]
+        //public void Post(UserInfo value)
+        //{
+        //    user.Add(value);
+        //}
 
         // PUT api/values/5
         [HttpPut("{id}")]
