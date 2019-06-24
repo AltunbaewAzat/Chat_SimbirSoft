@@ -28,22 +28,22 @@ namespace WpfClientApp.Managers
                 return false;
             }
         }
-        //public bool PostValue(UserWpf userValue)
-        //{
-        //    client.BaseAddress = new Uri("http://localhost:30766");
-        //    client.MaxResponseContentBufferSize = 256000;
-        //    client.DefaultRequestHeaders.Accept.Clear();
-        //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        public bool PostValue(UserWpf userValue)
+        {
+            client.BaseAddress = new Uri("http://localhost:30766");
+            client.MaxResponseContentBufferSize = 256000;
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-        //    HttpResponseMessage response = client.PostAsync("api/values/", userValue).Result;
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+            var response = client.PostAsJsonAsync("api/values/", userValue).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
