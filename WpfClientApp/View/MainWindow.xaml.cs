@@ -41,7 +41,7 @@ namespace WpfClientApp
             //    isConnected = false;
             //}
         }
-        private void Button_ClickConnect(object sender, RoutedEventArgs e)
+        public void Button_ClickConnect(object sender, RoutedEventArgs e)
         {           
             if(!string.IsNullOrEmpty(tbUserName.Text))
             {
@@ -69,34 +69,35 @@ namespace WpfClientApp
                 MessageBox.Show("Введите имя пользователя.");
             }           
         }
-        private void Button_ClickRegistration(object sender, RoutedEventArgs e)
-        {            
-            if (!string.IsNullOrEmpty(tbUserName.Text))
-            {
-                user.UserName = tbUserName.Text;
-                if (!string.IsNullOrEmpty(pbPassword.Password.ToString()))
-                {
-                    user.Password = pbPassword.Password.ToString();
-                    bool registration = (api.PostValue(user));
-                    if (registration)
-                    {
-                        ChatWindow();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Што то пошло не так");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Введите пароль.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Введите имя пользователя.");
-            }
-        }
+
+        //private void Button_ClickRegistration(object sender, RoutedEventArgs e)
+        //{            
+        //    if (!string.IsNullOrEmpty(tbUserName.Text))
+        //    {
+        //        user.UserName = tbUserName.Text;
+        //        if (!string.IsNullOrEmpty(pbPassword.Password.ToString()))
+        //        {
+        //            user.Password = pbPassword.Password.ToString();
+        //            bool registration = (api.PostValue(user));
+        //            if (registration)
+        //            {
+        //                ChatWindow();
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Што то пошло не так");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Введите пароль.");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Введите имя пользователя.");
+        //    }
+        //}
 
         public void ChatWindow()
         {
@@ -106,6 +107,11 @@ namespace WpfClientApp
             chatWindow.lbUsers.Items.Add(user.UserName);
             chatWindow.lbChat.Items.Add($"{DateTime.Now.ToString("HH:mm:ss")} Пользователь {user.UserName} присоединился к чату");
             Close();
+        }
+
+        private void Button_ClickRegistration(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
