@@ -32,7 +32,6 @@ namespace WebApi
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
             services.AddMvc();
         }
 

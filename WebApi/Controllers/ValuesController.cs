@@ -23,7 +23,7 @@ namespace WebApi.Controllers
             return JsonConvert.SerializeObject(user.Where(x => String.Equals(x.UserName, userName) && String.Equals(x.Password, password)).FirstOrDefault());
         }
         [HttpPost]
-        public void PostUser(UserInfo value)
+        public void PostUser([FromBody]UserInfo value)
         {
             user.Add(value);
         }
