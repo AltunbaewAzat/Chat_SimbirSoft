@@ -14,7 +14,7 @@ namespace WpfClientApp.Managers
         //HttpResponseMessage response = new HttpResponseMessage();
         public bool GetValue(string userName, string password)
         {
-            client.BaseAddress = new Uri("http://localhost:30766");
+            client.BaseAddress = new Uri("http://localhost:3087");
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -36,8 +36,9 @@ namespace WpfClientApp.Managers
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            string str = ("{{'UserName':'" + userValue.UserName + "', 'Password':'" + userValue.Password + "'}}");
-                //{0}', 'Password':'{1}'}}", userValue.UserName, userValue.Password);
+            string str = ($" {userValue.UserName} + {userValue.Password}");
+            //string str = ("{{'UserName':'" + userValue.UserName + "', 'Password':'" + userValue.Password + "'}}");
+            //{0}', 'Password':'{1}'}}", userValue.UserName, userValue.Password);
             StringContent strCont = new StringContent(str, Encoding.UTF8, "application/json");
 
             //string str = JsonConvert.SerializeObject(userValue);
